@@ -1,0 +1,13 @@
+{
+  "name": "devcap-layers",
+  "version": "1.0.0",
+  "description": "DevCap layers to export as a global dependency for other devcap dependencies",
+  "author": "Courtney McCleve",
+  "license": "ISC",
+  "dependencies": {
+    "@akanass/rx-http-request": "^3.1.0",
+    "axios": "^0.18.0",
+    "moment": "^2.24.0",
+    "rxjs": "^6.4.0"
+  }
+}
