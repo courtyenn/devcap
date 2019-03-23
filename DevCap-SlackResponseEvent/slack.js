@@ -1,3 +1,4 @@
+const axios = require('axios')
 const RxHR = require('@akanass/rx-http-request').RxHR
 
 module.exports.updateAttachment = ({channel, ts, status, originalMessage}, authToken) => {
@@ -11,6 +12,9 @@ module.exports.updateAttachment = ({channel, ts, status, originalMessage}, authT
   }
   else if(status === 'next'){
     text = 'On standby!'
+  }
+  else if(status === 'never'){
+    text = 'DevCap sad :nic-sad:'
   }
 
   return RxHR.post(`https://slack.com/api/chat.update`, {

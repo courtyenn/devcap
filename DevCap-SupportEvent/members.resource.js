@@ -8,8 +8,14 @@ module.exports.getAllDueDevs = () => {
     const scan = {
       IndexName: 'last_customer_alignment-index',
       TableName: TABLE,
-      FilterExpression : 'last_customer_alignment >= :test',
-      ExpressionAttributeValues : {':test' : moment().subtract(process.env.TIMER, 'days').utc().format('YYYY-MM-DD')}
+      FilterExpression : 'last_customer_alignment >= :test AND #s <> :never',
+      ExpressionAttributeValues : {
+        ':test' : moment().subtract(process.env.TIMER, 'days').utc().format('YYYY-MM-DD'),
+        ':never': 'never'
+      },
+      ExpressionAttributeNames: {
+        '#s': 'status'
+      }
     }
 
     client.scan(scan, (err, data) => {

@@ -30,6 +30,7 @@ exports.main = (event, context, callback) => {
           callback(err, response)
         })
       }, e => {
+        console.log(e)
         callback(e, null)
       })
     })

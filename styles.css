@@ -1,0 +1,41 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: radial-gradient(#00BF4B, #007228);
+}
+
+div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200px;
+  }
+  25% {
+    background-position: 2500px;
+  }
+  100% {
+    background-position: 2500px;
+  }
+}
+
+h1 {
+  font-size: 160px;
+  color: white;
+  background: linear-gradient(to right, #333 20%, #eee 40%, #eee 60%, #333 80%);
+  background-size: 400% auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
